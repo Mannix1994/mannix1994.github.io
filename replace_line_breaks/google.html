@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>翻译工具</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.1/examples/jumbotron/jumbotron.css" rel="stylesheet">
+    <link href="css/start.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/jquery-slim.min.js"></script>
+    <!--<script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>-->
+    <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script type="text/javascript"
+            src="//translate.google.cn/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" language="javascript" src="js/start.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            initialize();
+            googleTranslateElementInit();
+        };
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'zh-CN',
+                multilanguagePage: true
+            }, 'google_translate_element');
+        }
+    </script>
+</head>
+
+<body>
+<!--导航栏-->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark nav-pos">
+    <a class="navbar-brand" href="#">翻译选项</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" id="nav_1">
+                <a class="nav-link" href="#" onclick="nav_bar_active('nav_1')">谷歌翻译</a>
+            </li>
+            <li class="nav-item" id="nav_2">
+                <a class="nav-link" href="baidu.html" onclick="nav_bar_active('nav_2')">百度翻译</a>
+            </li>
+            <li class="nav-item" id="nav_3">
+                <a class="nav-link" href="#" onclick="nav_bar_active('nav_3')">不用翻译</a>
+            </li>
+            <li class="nav-item" id="nav_4">
+                <a class="nav-link" href="help.html">使用帮助</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<main role="main">
+    <!--标题栏-->
+    <div class="container-control">
+        <div class="container-fluid">
+            <h1>欢迎, 使用</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <!--三个按钮-->
+        <div class="row">
+            <div class="col-md-5">
+                <!--<h2>原始段落</h2>-->
+                <textarea class="form-control" rows="8" name="origin" id="origin"
+                          placeholder="含有回车的文本" style="resize: none;"></textarea>
+            </div>
+            <div class="col-md-2" align="center">
+                <hr>
+                <div class="row">
+                    <div class="col-md-12 pad">
+                        <button class="btn btn-primary" id="copy_button" data-clipboard-target="#replaced">复 制</button>
+                    </div>
+                    <div class="col-md-12 pad">
+                        <button class="btn btn-primary" data-toggle="button" onclick="on_clear_clicked()">清 空</button>
+                    </div>
+                    <div class="col-md-12 pad">
+                        <button class="btn btn-primary" data-toggle="button" onclick="on_translate_clicked()">翻 译</button>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="auto_copy">
+                    <label class="form-check-label" for="auto_copy">自动复制</label>
+                </div>
+                <hr>
+            </div>
+            <div class="col-md-5">
+                <textarea class="form-control" rows="8" name="replaced" id="replaced" data-clipboard-text=""
+                          placeholder="去掉回车的文本" style="resize: none;"></textarea>
+            </div>
+        </div>
+        <!--谷歌翻译组件-->
+        <div class="row" id="google_translate_control">
+            <div class="col-md-10">
+                <hr>
+                <p id="text_p"></p>
+            </div>
+            <div class="col-md-2" align="right">
+                <hr>
+                <!--把谷歌翻译的控件放在这里-->
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+        <hr>
+    </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+    <p style="text-align: right;">&copy; 视觉实验室 of SCU</p>
+</footer>
+</body>
+</html>
