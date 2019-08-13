@@ -24,9 +24,9 @@ function styleControl() {
         $('#clear_button_group').attr('class', 'col-md-12 pad');
         $('#translate_button_group').attr('class', 'col-md-12 pad');
     }else{
-        $('#copy_button_group').attr('class', 'col-md-2 pad');
-        $('#clear_button_group').attr('class', 'col-md-2 pad');
-        $('#translate_button_group').attr('class', 'col-2-12 pad');
+        $('#copy_button_group').attr('class', 'col-md-4 pad');
+        $('#clear_button_group').attr('class', 'col-md-4 pad');
+        $('#translate_button_group').attr('class', 'col-md-4 pad');
     }
 }
 
