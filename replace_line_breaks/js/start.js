@@ -13,6 +13,21 @@ function initialize() {
     clipboard.on('error', function (e) {
         console.log('copy failed:');
     });
+
+    styleControl();
+}
+
+
+function styleControl() {
+    if(isPC()){
+        $('#copy_button_group').attr('class', 'col-md-12 pad');
+        $('#clear_button_group').attr('class', 'col-md-12 pad');
+        $('#translate_button_group').attr('class', 'col-md-12 pad');
+    }else{
+        $('#copy_button_group').attr('class', 'col-md-4 pad');
+        $('#clear_button_group').attr('class', 'col-md-4 pad');
+        $('#translate_button_group').attr('class', 'col-4-12 pad');
+    }
 }
 
 /**
@@ -100,4 +115,21 @@ function on_clear_clicked() {
     $("#replaced").val('');
     $("#text_p").text('');
     $('#origin').focus();
+}
+
+
+/**
+ * @return {boolean}
+ */
+function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
 }

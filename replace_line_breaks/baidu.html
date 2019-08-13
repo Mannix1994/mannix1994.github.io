@@ -18,7 +18,7 @@
     <!--<script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>-->
     <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-    <script type="text/javascript" language="javascript" src="js/start.min.js" charset="utf-8"></script>
+    <script type="text/javascript" language="javascript" src="js/start.js" charset="utf-8"></script>
     <script type="text/javascript">
         window.onload = function () {
             initialize();
@@ -74,13 +74,13 @@
             <div class="col-md-2" align="center">
                 <hr>
                 <div class="row">
-                    <div class="col-md-12 pad">
+                    <div class="col-md-12 pad" id="copy_button_group">
                         <button class="btn btn-primary" id="copy_button" data-clipboard-target="#replaced">复 制</button>
                     </div>
-                    <div class="col-md-12 pad">
+                    <div class="col-md-12 pad" id="clear_button_group">
                         <button class="btn btn-primary" data-toggle="button" onclick="on_clear_clicked()">清 空</button>
                     </div>
-                    <div class="col-md-12 pad">
+                    <div class="col-md-12 pad" id="translate_button_group">
                         <button class="btn btn-primary" data-toggle="button" onclick="on_translate_clicked()">翻 译</button>
                     </div>
                 </div>
