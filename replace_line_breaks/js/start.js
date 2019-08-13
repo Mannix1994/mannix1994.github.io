@@ -122,7 +122,8 @@ function on_clear_clicked() {
  */
 function isPC() {
     var userAgentInfo = navigator.userAgent;
-    var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone",
+        "iPad", "iPod", "MicroMessenger", "QQ"];
     var flag = true;
     for (var v = 0; v < Agents.length; v++) {
         if (userAgentInfo.indexOf(Agents[v]) > 0) {
