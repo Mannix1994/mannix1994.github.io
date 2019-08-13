@@ -73,20 +73,25 @@
             <!--三个按钮-->
             <div class="col-md-2" align="center">
                 <hr>
-                <div class="row">
-                    <div class="col-md-12 pad" id="copy_button_group">
+                <div class="row" id="button-group">
+                    <div class="col-md-12 pad">
                         <button class="btn btn-primary" id="copy_button" data-clipboard-target="#replaced">复 制</button>
                     </div>
-                    <div class="col-md-12 pad" id="clear_button_group">
+                    <div class="col-md-12 pad">
                         <button class="btn btn-primary" data-toggle="button" onclick="on_clear_clicked()">清 空</button>
                     </div>
-                    <div class="col-md-12 pad" id="translate_button_group">
+                    <div class="col-md-12 pad">
                         <button class="btn btn-primary" data-toggle="button" onclick="on_translate_clicked()">翻 译</button>
                     </div>
                 </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="auto_copy">
-                    <label class="form-check-label" for="auto_copy">自动复制</label>
+                <hr>
+                <div class="row">
+                    <div class="col-md-auto">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="auto_copy">
+                            <label class="form-check-label" for="auto_copy">自动复制</label>
+                        </div>
+                    </div>
                 </div>
                 <hr>
             </div>

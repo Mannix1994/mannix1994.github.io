@@ -19,14 +19,13 @@ function initialize() {
 
 
 function styleControl() {
-    if(isPC()){
-        $('#copy_button_group').attr('class', 'col-md-12 pad');
-        $('#clear_button_group').attr('class', 'col-md-12 pad');
-        $('#translate_button_group').attr('class', 'col-md-12 pad');
-    }else{
-        $('#copy_button_group').attr('class', 'col-md-4 pad');
-        $('#clear_button_group').attr('class', 'col-md-4 pad');
-        $('#translate_button_group').attr('class', 'col-md-4 pad');
+    if(!isPC()){
+        $('#button-group').html("<div class=\"col\">\n" +
+            "                        <button class=\"btn btn-primary\" id=\"copy_button\" data-clipboard-target=\"#replaced\">复 制</button>\n" +
+            "                        <button class=\"btn btn-primary\" data-toggle=\"button\" onclick=\"on_clear_clicked()\">清 空</button>\n" +
+            "                        <button class=\"btn btn-primary\" data-toggle=\"button\" onclick=\"on_translate_clicked()\">翻 译\n" +
+            "                        </button>\n" +
+            "                    </div>");
     }
 }
 
